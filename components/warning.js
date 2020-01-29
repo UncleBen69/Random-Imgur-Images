@@ -14,6 +14,10 @@ class Warning extends React.Component {
 		});
 	};
 
+	declineConditions = () => {
+		location.href = "https://google.com";
+	};
+
 	render() {
 		if (this.state.accepted) {
 			return <Gallery />;
@@ -22,20 +26,48 @@ class Warning extends React.Component {
 				<>
 					<div className="warning">
 						<h1>
-							Please Accept that you will potentially see a lot of
-							horrific stuff
+							Please accept that you will potentially see a lot of
+							horrific stuff.
 						</h1>
-						<button onClick={this.acceptCondition}>Accept</button>
-						<button onClick={this.acceptCondition}>Decline</button>
+						<h2>
+							All this website is doing is generating random Imgur
+							URL's and displaying it, I have no control over the
+							images shown.
+						</h2>
+						<pre className="subtitle">
+							There <i>will</i> be NSFW content below.
+						</pre>
+						<button onClick={this.acceptCondition} id="accept">
+							Accept
+						</button>
+						<button onClick={this.declineConditions} id="decline">
+							Decline
+						</button>
 					</div>
 
 					<style jsx>{`
+						.subtitle {
+							color: red;
+							text-align: center;
+							padding-bottom: 50px;
+						}
 						.warning {
 							text-align: center;
 							color: #fff;
 						}
 						button {
+							height: 50px;
+							width: 100px;
+							border: 0;
+							font-size: 20px;
+							color: #fff;
 							margin-right: 15px;
+						}
+						#accept {
+							background-color: green;
+						}
+						#decline {
+							background-color: red;
 						}
 					`}</style>
 				</>

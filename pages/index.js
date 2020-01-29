@@ -6,7 +6,6 @@ class Index extends React.Component {
 		return (
 			<div className="body">
 				<h1 className="title">Random Imgur Infinite Scroll</h1>
-				<pre className="subtitle">Really NSFW Content Below</pre>
 				<hr />
 
 				<Warning />
@@ -18,11 +17,6 @@ class Index extends React.Component {
 						font-size: 50px;
 						font-weight: 800;
 						color: #fff;
-					}
-					.subtitle {
-						color: red;
-						text-align: center;
-						padding-bottom: 50px;
 					}
 				`}</style>
 			</div>

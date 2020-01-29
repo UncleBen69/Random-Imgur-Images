@@ -68,48 +68,13 @@ class Gallery extends React.Component {
 					))}
 				</InfiniteScroll>
 
-				<style jsx>{`
+				<style jsx global>{`
 					.imageContainer {
 						display: flex;
 						justify-content: center;
 						flex-wrap: wrap;
 						align-items: center;
 						margin-top: 50px;
-					}
-					@media only screen and (max-width: 400px) {
-						div.galleryItem {
-							width: auto !important;
-							height: 100% !important;
-						}
-					}
-					div.galleryItem {
-						margin-bottom: 30px;
-						margin-right: 5px;
-						border: 1px solid #383838;
-						background-color: #1c1c1c;
-						color: #fff;
-						float: left;
-						width: 20%;
-						box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2),
-							0 6px 20px 0 rgba(0, 0, 0, 0.19);
-						height: 100%;
-					}
-
-					div.galleryItem:hover {
-						border: 1px solid #777;
-					}
-
-					div.desc {
-						padding: 5px;
-						text-align: center;
-					}
-
-					div.galleryItem img {
-					}
-					div.galleryItem a {
-						display: flex;
-						flex-direction: column;
-						justify-content: center;
 					}
 				`}</style>
 			</>
@@ -144,19 +109,59 @@ class Image extends React.Component {
 			return null;
 		} else {
 			return (
-				<div className="galleryItem">
-					<a href={src} target="_blank">
-						<Zoom>
-							<img
-								onLoad={this.onImgLoad}
-								src={src}
-								width="100%"
-								height="auto"
-							/>
-						</Zoom>
-					</a>
-					<div className="desc">{num}</div>
-				</div>
+				<>
+					<div className="galleryItem">
+						<a href={src} target="_blank">
+							<Zoom>
+								<img
+									onLoad={this.onImgLoad}
+									src={src}
+									width="100%"
+									height="auto"
+								/>
+							</Zoom>
+						</a>
+						<div className="desc">{num}</div>
+					</div>
+
+					<style jsx>{`
+						@media only screen and (max-width: 400px) {
+							div.galleryItem {
+								width: auto !important;
+								height: 100% !important;
+							}
+						}
+						div.galleryItem {
+							margin-bottom: 30px;
+							margin-right: 5px;
+							border: 1px solid #383838;
+							background-color: #1c1c1c;
+							color: #fff;
+							float: left;
+							width: 20%;
+							box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2),
+								0 6px 20px 0 rgba(0, 0, 0, 0.19);
+							height: 100%;
+						}
+
+						div.galleryItem:hover {
+							border: 1px solid #777;
+						}
+
+						div.desc {
+							padding: 5px;
+							text-align: center;
+						}
+
+						div.galleryItem img {
+						}
+						div.galleryItem a {
+							display: flex;
+							flex-direction: column;
+							justify-content: center;
+						}
+					`}</style>
+				</>
 			);
 		}
 	}
