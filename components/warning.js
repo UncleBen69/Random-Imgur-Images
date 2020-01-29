@@ -35,7 +35,7 @@ class Warning extends React.Component {
 							images shown.
 						</h2>
 						<pre className="subtitle">
-							There <i>will</i> be NSFW content below.
+							There <i>will</i> be NSFW content!!
 						</pre>
 						<button onClick={this.acceptCondition} id="accept">
 							Accept
@@ -49,7 +49,7 @@ class Warning extends React.Component {
 						.subtitle {
 							color: red;
 							text-align: center;
-							padding-bottom: 50px;
+							padding-bottom: 25px;
 						}
 						.warning {
 							text-align: center;
@@ -68,6 +68,10 @@ class Warning extends React.Component {
 						}
 						#decline {
 							background-color: red;
+						}
+						h1,
+						h2 {
+							font-family: Arial;
 						}
 					`}</style>
 				</>

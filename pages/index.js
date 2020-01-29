@@ -1,14 +1,22 @@
+import { NextSeo } from "next-seo";
+
 //Components
 import Warning from "../components/warning";
 
 class Index extends React.Component {
 	render() {
 		return (
-			<div className="body">
-				<h1 className="title">Random Imgur Infinite Scroll</h1>
-				<hr />
+			<>
+				<NextSeo
+					title="Random Imgur Images Infinite Scroll"
+					description="Scroll through randomly generated Imgur images."
+				/>
+				<div className="body">
+					<h1 className="title">Random Imgur Infinite Scroll</h1>
+					<hr />
 
-				<Warning />
+					<Warning />
+				</div>
 
 				<style jsx>{`
 					.title {
@@ -19,7 +27,7 @@ class Index extends React.Component {
 						color: #fff;
 					}
 				`}</style>
-			</div>
+			</>
 		);
 	}
 }
