@@ -25,21 +25,40 @@ class Gallery extends React.Component {
 		return result;
 	};
 
+	RandomUrls = () => {
+		let low = 1, high = 2;
+		let random = Math.floor(Math.random() * high) + low
+
+		switch (random) {
+			case 1:
+				// Legacy 5 char imgur url jpg
+				return ("https://i.imgur.com/" + this.randomString(5, "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ") +".jpg")
+			
+			case 2:
+				// 5 Char Imgur Url png
+				return ("https://i.imgur.com/" + this.randomString(5, "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ") +".png")
+				
+			default:
+				break;
+		}
+
+	}
+
 	RandomArrayOfURLS = () => {
 		let urls = [];
-		for (let i = 0; i < 30; i++) {
-			let RandURL =
-				"https://i.imgur.com/" +
-				this.randomString(
-					5,
-					"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-				) +
-				".jpg";
+		let url;
+		for (let i = 0; i < 100; i++) {
+			
 			//console.log(i+" IMGUR "+RandURL)
 
-			urls.push(RandURL);
+			//urls.push(this.RandomUrls());
 
-			if (i === 29) {
+			url = this.RandomUrls()
+			if(!urls.includes(url)){
+				urls.push(url);
+			}
+
+			if (i === 99 ) {
 				return [...urls];
 			}
 		}
@@ -121,7 +140,7 @@ class Image extends React.Component {
 								/>
 							</Zoom>
 						</a>
-						<div className="desc">{num}</div>
+						<div className="desc">{src}</div>
 					</div>
 
 					<style jsx>{`
