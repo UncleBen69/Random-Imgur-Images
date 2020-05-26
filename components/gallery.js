@@ -26,7 +26,7 @@ class Gallery extends React.Component {
 	};
 
 	RandomUrls = () => {
-		let low = 1, high = 2;
+		let low = 1, high = 4;
 		let random = Math.floor(Math.random() * high) + low
 
 		switch (random) {
@@ -37,7 +37,21 @@ class Gallery extends React.Component {
 			case 2:
 				// 5 Char Imgur Url png
 				return ("https://i.imgur.com/" + this.randomString(5, "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ") +".png")
-				
+			
+			case 3:
+				// 5 Char Imgur Url gif
+				return ("https://i.imgur.com/" + this.randomString(5, "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ") +".gif")
+
+			case 4:
+				// 5 Char Imgur Url jpeg
+				return ("https://i.imgur.com/" + this.randomString(5, "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ") +".jpeg")
+
+			/*
+			case 5:
+				// 5 Char Imgur Url webp
+				return ("https://i.imgur.com/" + this.randomString(5, "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ") +".gifv")
+
+			*/
 			default:
 				break;
 		}
